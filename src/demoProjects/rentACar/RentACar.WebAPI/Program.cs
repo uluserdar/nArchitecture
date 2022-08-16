@@ -1,4 +1,6 @@
-using Persistence;
+using Application;
+using RentACar.Infrastructure;
+using RentACar.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,11 +8,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 //builder.Services.AddApplicationServices();
-//builder.Services.AddSecurityServices();
+builder.Services.AddSecurityServices();
 builder.Services.AddPersistenceServices(builder.Configuration);
-//builder.Services.AddInfrastructureServices();
-//builder.Services.AddHttpContextAccessor();
+builder.Services.AddInfrastructureServices();
+builder.Services.AddHttpContextAccessor();
 
+builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
