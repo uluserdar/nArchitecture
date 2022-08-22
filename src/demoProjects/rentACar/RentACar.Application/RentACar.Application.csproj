@@ -15,5 +15,11 @@
     <ProjectReference Include="..\..\..\corePackages\Core.Application\Core.Application.csproj" />
     <ProjectReference Include="..\RentACar.Domain\RentACar.Domain.csproj" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <Folder Include="Feaures\Brands\Constants\" />
+    <Folder Include="Feaures\Brands\Models\" />
+    <Folder Include="Feaures\Brands\Queries\" />
+  </ItemGroup>
 
 </Project>

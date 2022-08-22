@@ -11,6 +11,7 @@ namespace Application.Features.someFeature.Profiles
     {
         public MappingProfiles()
         {
+
         }
     }
 }
