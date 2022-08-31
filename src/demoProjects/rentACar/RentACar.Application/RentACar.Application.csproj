@@ -18,8 +18,7 @@
   
   <ItemGroup>
     <Folder Include="Feaures\Brands\Constants\" />
-    <Folder Include="Feaures\Brands\Models\" />
-    <Folder Include="Feaures\Brands\Queries\" />
+    <Folder Include="Feaures\Brands\Queries\GetByIdBrand\" />
   </ItemGroup>
 
 </Project>

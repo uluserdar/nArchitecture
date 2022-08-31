@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using Core.Persistence.Paging;
 using RentACar.Application.Feaures.Brands.Commands.CreateBrand;
 using RentACar.Application.Feaures.Brands.Dtos;
+using RentACar.Application.Feaures.Brands.Models;
 using RentACar.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -16,6 +18,9 @@ namespace RentACar.Application.Features.someFeature.Profiles
         {
             CreateMap<Brand, CreatedBrandDto>().ReverseMap();
             CreateMap<Brand,CreateBrandCommand>().ReverseMap();
+            CreateMap<IPaginate<Brand>, BrandListModel>().ReverseMap();
+            CreateMap<Brand, BrandListDto>().ReverseMap();
+            CreateMap<Brand, BrandGetByIdDto>().ReverseMap();
         }
     }
 }

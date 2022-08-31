@@ -24,5 +24,10 @@ namespace RentACar.Application.Feaures.Brands.Rules
             IPaginate<Brand> result = await _brandRepsitory.GetListAsync(b => b.Name == name);
             if (result.Items.Any()) throw new BusinessException("Brand name exists");
         }
+
+        public void BrandShouldExistsWhenRequested(Brand brand)
+        {
+            if (brand==null) throw new BusinessException("Requestes brand does not exists");
+        }
     }
 }
