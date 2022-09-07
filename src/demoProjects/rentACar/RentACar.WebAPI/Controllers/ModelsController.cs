@@ -1,8 +1,10 @@
 ﻿using Core.Application.Requests;
+using Core.Persistence.Dynamic;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RentACar.Application.Feaures.Models.Models;
 using RentACar.Application.Feaures.Models.Queries.GetListModel;
+using RentACar.Application.Feaures.Models.Queries.GetListModelByDynamic;
 
 namespace RentACar.WebAPI.Controllers
 {
@@ -16,6 +18,15 @@ namespace RentACar.WebAPI.Controllers
             GetListModelQuery getListModelQuery = new GetListModelQuery { PageRequest = pageRequest };
 
             ModelListModel result = await Mediator.Send(getListModelQuery);
+            return Ok(result);
+        }
+
+        [HttpPost("GetList/ByDynamic")]
+        public async Task<IActionResult> GetListByDynamic([FromQuery] PageRequest pageRequest,[FromBody] Dynamic dynamic)
+        {
+            GetListModelByDynamicQuery getListModelByDynamicQuery = new GetListModelByDynamicQuery { PageRequest = pageRequest,Dynamic=dynamic };
+
+            ModelListModel result = await Mediator.Send(getListModelByDynamicQuery);
             return Ok(result);
         }
     }
